@@ -1,6 +1,6 @@
 local r = 1
-for j = 1, 4 do
-    for i = 1, 32 do
+for j = 1, 8 do
+    for i = 1, 25 do
         print(turtle.getFuelLevel())
         turtle.forward()
         turtle.placeDown()
