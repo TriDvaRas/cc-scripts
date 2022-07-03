@@ -1,23 +1,29 @@
 local r = 1
-for j = 1, 8 do
-    for i = 1, 25 do
+local runtimeArgs = { ... }
+if #runtimeArgs ~= 1 then
+    print("Usage: ref <forward> <right>")
+    error()
+end
+
+local function iter()
+    turtle.forward()
+    turtle.placeDown()
+    turtle.refuel()
+end
+
+for j = 1, runtimeArgs[1] do
+    for i = 1, runtimeArgs[2] do
         print(turtle.getFuelLevel())
-        turtle.forward()
-        turtle.placeDown()
-        turtle.refuel()
+        iter()
     end
     if r == 1 then
         turtle.turnRight()
-        turtle.forward()
-        turtle.placeDown()
-        turtle.refuel()
+        iter()
         turtle.turnRight()
         r = 0
     else
         turtle.turnLeft()
-        turtle.forward()
-        turtle.placeDown()
-        turtle.refuel()
+        iter()
         turtle.turnLeft()
         r = 1
     end
