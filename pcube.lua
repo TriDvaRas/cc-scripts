@@ -1,10 +1,6 @@
 -- tries to build a 8x8x16 cube with all available blocks
 local slot = 0
-local locf = 0
-local locr = 0
-local locu = 1
 local turnR = true
-local direction = 'f'
 -- 
 local function nextSlot()
     slot = slot + 1
