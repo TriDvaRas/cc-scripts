@@ -54,5 +54,4 @@ while turtle.getItemCount() > 0 do
     end
     fillRow()
     nextLayer()
-    nextSlot()
 end
