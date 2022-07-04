@@ -16,9 +16,15 @@ end
 local function fillRow()
     for i = 1, 7 do
         turtle.placeDown()
+        if turtle.getItemCount() == 0 then
+            nextSlot()
+        end
         turtle.forward()
     end
     turtle.placeDown()
+    if turtle.getItemCount() == 0 then
+        nextSlot()
+    end
 end
 local function nextRow()
     if turnR then
