@@ -35,8 +35,7 @@ local function nextRow()
 end
 local function nextLayer()
     turtle.up()
-    turtle.turnLeft()
-    turtle.turnLeft()
+    turtle.turnRight()
     turnR = true
 end
 -- !
