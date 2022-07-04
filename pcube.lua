@@ -42,7 +42,7 @@ end
 -- !
 nextSlot()
 turtle.up()
-while turtle.getItemCount > 0 do
+while turtle.getItemCount() > 0 do
     for i = 1, 7 do
         fillRow()
         nextRow()
