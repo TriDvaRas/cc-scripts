@@ -1,12 +1,12 @@
 local r = 1
 local runtimeArgs = { ... }
-if #runtimeArgs ~= 1 or #runtimeArgs ~= 2 then
-    print("Usage: planeTop <size> <depth>")
+if #runtimeArgs < 1 then
+    print("Usage: wallReplace <size> <depth>")
     error()
 end
 
 local size = runtimeArgs[1]
-local depth = runtimeArgs[2]
+local depth = runtimeArgs[2] or  16*64/size
 local slot = 0
 local turnR = true
 --
