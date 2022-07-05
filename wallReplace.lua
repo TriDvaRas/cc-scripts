@@ -26,6 +26,7 @@ local function digRow()
         if turtle.getItemCount() == 0 or not turtle.getItemDetail().name == blockName then
             nextSlot()
         end
+        turtle.dig()
         turtle.forward()
     end
     turtle.digDown()
@@ -41,6 +42,7 @@ local function digFillRow()
         if turtle.getItemCount() == 0 or not turtle.getItemDetail().name == blockName then
             nextSlot()
         end
+        turtle.dig()
         turtle.forward()
     end
     turtle.digDown()
@@ -50,19 +52,6 @@ local function digFillRow()
     end
 end
 
-local function fillRow()
-    for i = 1, size - 1 do
-        turtle.placeUp()
-        if turtle.getItemCount() == 0 or not turtle.getItemDetail().name == blockName then
-            nextSlot()
-        end
-        turtle.forward()
-    end
-    turtle.placeUp()
-    if turtle.getItemCount() == 0 or not turtle.getItemDetail().name == blockName then
-        nextSlot()
-    end
-end
 
 local function nextRow()
     turtle.down()
