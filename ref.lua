@@ -1,6 +1,6 @@
 local r = 1
 local runtimeArgs = { ... }
-if #runtimeArgs ~= 1 then
+if #runtimeArgs ~= 2 then
     print("Usage: ref <forward> <right>")
     error()
 end
