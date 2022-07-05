@@ -1,4 +1,4 @@
-
+turtle.digDown()
 while true do
     local hasSpace = turtle.drop()
     if hasSpace then
