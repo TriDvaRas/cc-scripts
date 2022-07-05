@@ -11,8 +11,8 @@ local function iter()
     turtle.refuel()
 end
 
-for j = 1, runtimeArgs[1] do
-    for i = 1, runtimeArgs[2] do
+for j = 1, runtimeArgs[2] do
+    for i = 1, runtimeArgs[1] do
         print(turtle.getFuelLevel())
         iter()
     end
