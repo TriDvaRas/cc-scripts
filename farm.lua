@@ -39,6 +39,8 @@ local function processTile()
         if data.metadata == 7 then
             turtle.select(4)
             turtle.digDown()
+            selectSeeds()
+            turtle.placeDown()
         end
     else
         selectSeeds()
@@ -59,7 +61,7 @@ local function nextRow()
     end
 end
 local function dropCrops()
-    for i = 3,16 do
+    for i = 4,16 do
         turtle.select(i)
         turtle.dropDown()
     end
@@ -80,10 +82,11 @@ local function farm()
     processTile()
     turtle.forward()
     turtle.turnRight()
-    for i = 1, 8 do
+    for i = 1, 7 do
         turtle.forward()
     end
     turtle.turnRight()
+    turnR = true
 end
 
 local function main()
