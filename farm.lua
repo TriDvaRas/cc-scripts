@@ -1,17 +1,21 @@
 local dancing = false
 local turnR = true
-local function seedDance()
+local function dance()
     turtle.turnLeft()
     turtle.turnLeft()
     turtle.turnLeft()
     turtle.turnLeft()
-    selectSeeds()
 end
 
-function selectSeeds()
+local function selectSeeds()
     local succ = false
     for i = 1, 3 do
         turtle.select(i)
+        print(i)
+        print(turtle.getItemCount())
+        print(turtle.getItemCount(i))
+        print(turtle.getItemCount(i)==0)
+        print(not turtle.getItemCount(i)==0)
         if not turtle.getItemCount(i) == 0 then
             if dancing == true then
                 turtle.down()
@@ -21,6 +25,7 @@ function selectSeeds()
             succ = true
             break
         end
+        print(succ)
     end
     if not succ then
         print('No seeds found in slots 1-3')
@@ -29,7 +34,8 @@ function selectSeeds()
             turtle.up()
             turtle.up()
         end
-        seedDance()
+        dance()
+        selectSeeds()
     end
 end
 

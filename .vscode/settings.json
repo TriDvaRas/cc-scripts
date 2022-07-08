@@ -1,8 +1,7 @@
 {
     "Lua.diagnostics.globals": [
         "turtle",
-        "sleep",
-        "selectSeeds"
+        "sleep"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"
