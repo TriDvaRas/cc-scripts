@@ -47,6 +47,7 @@ local function processTile()
         turtle.placeDown()
     end
 end
+
 local function nextRow()
     if turnR then
         turtle.turnRight()
@@ -60,29 +61,36 @@ local function nextRow()
         turnR = true
     end
 end
+
 local function dropCrops()
-    for i = 4,16 do
+    for i = 4, 16 do
         turtle.select(i)
+        for j = 1, 3 do
+            if turtle.compareTo(j) then
+                turtle.transferTo(j)
+            end
+        end
         turtle.dropDown()
     end
 end
+
 local function farm()
-    for i = 1, 7 do
-        for j = 1, 7 do
+    for i = 1, 8 do
+        for j = 1, 8 do
             processTile()
             turtle.forward()
         end
         processTile()
         nextRow()
     end
-    for j = 1, 7 do
+    for j = 1, 8 do
         processTile()
         turtle.forward()
     end
     processTile()
     turtle.forward()
     turtle.turnRight()
-    for i = 1, 7 do
+    for i = 1, 8 do
         turtle.forward()
     end
     turtle.turnRight()
