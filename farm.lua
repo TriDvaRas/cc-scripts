@@ -11,7 +11,7 @@ local function selectSeeds()
     local succ = false
     for i = 1, 3 do
         turtle.select(i)
-        if not (turtle.getItemCount(i) == 0) then
+        if (turtle.getItemCount(i) > 1) then
             if dancing == true then
                 turtle.down()
                 turtle.down()
