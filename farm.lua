@@ -91,10 +91,12 @@ end
 
 local function main()
     selectSeeds()
+    dropCrops()
     while true do
-        dropCrops()
         turtle.forward()
         farm()
+        dropCrops()
+        sleep(60)
     end
 end
 
