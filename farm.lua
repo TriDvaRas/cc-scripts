@@ -9,7 +9,7 @@ end
 
 local function selectSeeds()
     local succ = false
-    for i = 1, 2 do
+    for i = 1, 3 do
         turtle.select(i)
         if not (turtle.getItemCount(i) == 0) then
             if dancing == true then
@@ -60,6 +60,7 @@ local function nextRow()
 end
 local function dropCrops()
     for i = 3,16 do
+        turtle.select(i)
         turtle.dropDown()
     end
 end
@@ -80,7 +81,7 @@ local function farm()
     turtle.forward()
     turtle.turnRight()
     for i = 1, 8 do
-        turtle.formard()
+        turtle.forward()
     end
     turtle.turnRight()
 end
