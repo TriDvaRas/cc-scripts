@@ -88,7 +88,11 @@ local function farm()
         turtle.forward()
     end
     processTile()
-    turtle.forward()
+    turtle.turnRight()
+    turtle.turnRight()
+    for i = 1, 9 do
+        turtle.forward()
+    end
     turtle.turnRight()
     for i = 1, 8 do
         turtle.forward()
