@@ -9,14 +9,8 @@ end
 
 local function selectSeeds()
     local succ = false
-    print('aaaa')
     for i = 1, 2 do
         turtle.select(i)
-        print(i)
-        print(turtle.getItemCount())
-        print(turtle.getItemCount(i))
-        print(turtle.getItemCount(i)==0)
-        print(not turtle.getItemCount(i)==0)
         if not (turtle.getItemCount(i) == 0) then
             if dancing == true then
                 turtle.down()
@@ -26,7 +20,6 @@ local function selectSeeds()
             succ = true
             break
         end
-        print(succ)
     end
     if not succ then
         print('No seeds found in slots 1-3')
