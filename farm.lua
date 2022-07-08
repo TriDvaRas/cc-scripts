@@ -9,14 +9,15 @@ end
 
 local function selectSeeds()
     local succ = false
-    for i = 1, 3 do
+    print('aaaa')
+    for i = 1, 2 do
         turtle.select(i)
         print(i)
         print(turtle.getItemCount())
         print(turtle.getItemCount(i))
         print(turtle.getItemCount(i)==0)
         print(not turtle.getItemCount(i)==0)
-        if not turtle.getItemCount(i) == 0 then
+        if not (turtle.getItemCount(i) == 0) then
             if dancing == true then
                 turtle.down()
                 turtle.down()
@@ -66,7 +67,7 @@ local function nextRow()
 end
 local function dropCrops()
     for i = 3,16 do
-        
+        turtle.dropDown()
     end
 end
 local function farm()
@@ -92,6 +93,7 @@ local function farm()
 end
 
 local function main()
+    selectSeeds()
     while true do
         dropCrops()
         turtle.forward()
