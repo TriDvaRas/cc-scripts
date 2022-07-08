@@ -9,24 +9,28 @@ local function seedDance()
 end
 
 function selectSeeds()
+    local succ = false
     for i = 1, 3 do
         turtle.select(i)
-        if not turtle.getItemCount() == 0 then
+        if not turtle.getItemCount(i) == 0 then
             if dancing == true then
                 turtle.down()
                 turtle.down()
                 dancing = false
             end
-            return
+            succ = true
+            break
         end
     end
-    print('No seeds found in slots 1-3')
-    if dancing == false then
-        dancing = true
-        turtle.up()
-        turtle.up()
+    if not succ then
+        print('No seeds found in slots 1-3')
+        if dancing == false then
+            dancing = true
+            turtle.up()
+            turtle.up()
+        end
+        seedDance()
     end
-    seedDance()
 end
 
 local function processTile()
