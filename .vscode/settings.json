@@ -1,7 +1,10 @@
 {
     "Lua.diagnostics.globals": [
         "turtle",
-        "sleep"
+        "sleep",
+        "http",
+        "json",
+        "peripheral"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"
