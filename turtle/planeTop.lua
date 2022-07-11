@@ -5,10 +5,10 @@ if #runtimeArgs ~= 1 then
     error()
 end
 
-local size = runtimeArgs[1]  
+local size = runtimeArgs[1]
 local slot = 0
 local turnR = true
--- 
+--
 local function nextSlot()
     slot = slot + 1
     if slot == 17 then
@@ -16,8 +16,9 @@ local function nextSlot()
     end
     turtle.select(slot)
 end
+
 local function fillRow()
-    for i = 1, size-1 do
+    for i = 1, size - 1 do
         turtle.placeUp()
         if turtle.getItemCount() == 0 then
             nextSlot()
@@ -29,24 +30,43 @@ local function fillRow()
         nextSlot()
     end
 end
+
 local function nextRow()
     if turnR then
         turtle.turnRight()
+        while turtle.detect() do
+            turtle.turnRight()
+            if turtle.detect() then
+                print('Stuck')
+                os.exit()
+            end
+            turtle.forward()
+            turtle.turnLeft()
+        end
         turtle.forward()
         turtle.turnRight()
         turnR = false
     else
         turtle.turnLeft()
+        while turtle.detect() do
+            turtle.turnLeft()
+            if turtle.detect() then
+                print('Stuck')
+                os.exit()
+            end
+            turtle.forward()
+            turtle.turnRight()
+        end
         turtle.forward()
         turtle.turnLeft()
         turnR = true
     end
 end
+
 -- !
 nextSlot()
-for i = 1, size-1 do
+for i = 1, size - 1 do
     fillRow()
     nextRow()
 end
 fillRow()
-
