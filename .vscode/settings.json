@@ -3,8 +3,8 @@
         "turtle",
         "sleep",
         "http",
-        "json",
-        "peripheral"
+        "peripheral",
+        "textutils"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"
