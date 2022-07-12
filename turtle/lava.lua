@@ -21,6 +21,8 @@ local function doRow()
         turtle.placeUp()
         turtle.select(1)
         turtle.placeUp()
+        turtle.select(2)
+        turtle.digUp()
 
         if turtle.forward() then
             if turnR then
