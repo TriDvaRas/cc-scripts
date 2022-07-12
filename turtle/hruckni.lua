@@ -1,5 +1,3 @@
-local runtimeArgs = { ... }
-
 local speaker = peripheral.find("speaker")
 local function hruck()
     local rng = math.random()
