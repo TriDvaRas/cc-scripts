@@ -20,7 +20,7 @@ end
 local function dropWool()
     for i = 2, 16 do
         turtle.select(i)
-        turtle.dropDown()
+        turtle.dropUp()
     end
 end
 local function reshear()
